@@ -5,7 +5,8 @@ const todoMiddleware = store => next => action =>{
   switch (action.type) {
     case ACTION_TYPES.REQUEST_TODOS:
       const success = data => store.dispatch(receiveTodos(data));
-      fetchTodos(success);
+      const error = e => console.log(e.msg);
+      fetchTodos(success, error);
       break;
     default:
       next(action);
