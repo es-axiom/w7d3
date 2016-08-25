@@ -1,7 +1,7 @@
 import { ACTION_TYPES } from '../actions/todo_actions';
 
 
-const todosReducer = (state = { bru: 'yeee' }, action) => {
+const todosReducer = (state = {}, action) => {
   switch (action.type) {
     case ACTION_TYPES.RECEIVE_TODOS:
       return action.todos.reduce( (obj, todo) => {
